@@ -19,7 +19,7 @@ warnings.filterwarnings('ignore')
 
 
 from yahooquery import Ticker
-#from fbprophet import Prophet
+from fbprophet import Prophet
 import yfinance as yf
 #from tensorflow.keras.models import Sequential
 #from tensorflow.keras.layers import Dense,LSTM
