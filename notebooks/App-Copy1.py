@@ -19,7 +19,7 @@ warnings.filterwarnings('ignore')
 
 
 from yahooquery import Ticker
-#from fbprophet import Prophet
+from fbprophet import Prophet
 import yfinance as yf
 #from tensorflow.keras.models import Sequential
 #from tensorflow.keras.layers import Dense,LSTM
@@ -498,29 +498,29 @@ def main():
 
 # ------------------------------ Previsões---------------------------- 
 
-            #st.subheader('Previsões')
+            st.subheader('Previsões')
 
-            #st.write('As previsões são feitas levando em conta apenas o movimento gráfico, porém o movimento do preço de um ativo é influenciado por diversos outros fatores, com isso, deve se considerar as previsões como uma hipótese de o preço do ativo variar somente pela sua variação gráfica')
+            st.write('As previsões são feitas levando em conta apenas o movimento gráfico, porém o movimento do preço de um ativo é influenciado por diversos outros fatores, com isso, deve se considerar as previsões como uma hipótese de o preço do ativo variar somente pela sua variação gráfica')
 
-            #st.write('Previsão considerando os últimos 365 dias, pode ser entendida como uma tendência dos dados segundo o último ano')
+            st.write('Previsão considerando os últimos 365 dias, pode ser entendida como uma tendência dos dados segundo o último ano')
 
-            #time = time.reset_index()
-           # time = time[['date','close']]
-           # time.columns = ['ds','y']
+            time = time.reset_index()
+            time = time[['date','close']]
+            time.columns = ['ds','y']
 
             #Modelling
-           # m = Prophet()
-          #  m.fit(time[-360:])
-          #  future = m.make_future_dataframe(periods=30)
-          #  forecast = m.predict(future[-30:])
+            m = Prophet()
+            m.fit(time[-360:])
+            future = m.make_future_dataframe(periods=30)
+            forecast = m.predict(future[-30:])
 
-            #from fbprophet.plot import plot_plotly, plot_components_plotly
+            from fbprophet.plot import plot_plotly, plot_components_plotly
 
-          #  fig1 = plot_plotly(m, forecast)
-          #  st.plotly_chart(fig1)
+            fig1 = plot_plotly(m, forecast)
+            st.plotly_chart(fig1)
             #st.plotly_chart(m, forecast)
-          #  fig2 = m.plot_components(forecast)
-         #   st.plotly_chart(fig2)
+            fig2 = m.plot_components(forecast)
+            st.plotly_chart(fig2)
 
             #st.write('Previsão considerando as últimas semanas, pode ser entendida como uma tendência dos dados segundo os últimos dias. Leva em consideração diversos fatores como: Índice de força relativa RSI, oscilador estocástico %K, Indicador Willian %R além do movimento gráfico dos últimos dias')
 
