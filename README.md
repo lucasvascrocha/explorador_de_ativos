@@ -6,7 +6,7 @@
 
 Aplicativo neste link abaixo
 
-https://explorador-de-ativos.herokuapp.com/  
+https://share.streamlit.io/lucasvascrocha/explorador_de_ativos/main/notebooks/App.py 
 
 Veja o Vídeo ensinando a utilizar o aplicativo  
 
