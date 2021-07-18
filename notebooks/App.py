@@ -522,7 +522,7 @@ def main():
 
             fig1 = plot_plotly(m, forecast)
             st.plotly_chart(fig1)
-            st.plotly_chart(m, forecast)
+            #st.plotly_chart(m, forecast)
             fig2 = m.plot_components(forecast)
             st.plotly_chart(fig2)
 
