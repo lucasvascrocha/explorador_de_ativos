@@ -227,14 +227,18 @@ def main():
               fundamentus = get_specific_data(nome_do_ativo[:5])
               fundamentus = pd.DataFrame([fundamentus])
               
-              pfizer = yf.Ticker(nome_do_ativo)
-              info = pfizer.info 
-              st.title('PERFIL DA EMPRESA')
-              #st.subheader(info['longName']) 
-              st.markdown('** Setor **: ' + info['sector'])
-              st.markdown('** Atividade **: ' + info['industry'])
-              st.markdown('** Website **: ' + info['website'])
-              
+              try:
+                    
+                  pfizer = yf.Ticker(nome_do_ativo)
+                  info = pfizer.info 
+                  st.title('PERFIL DA EMPRESA')
+                  st.subheader(info['longName']) 
+                  st.markdown('** Setor **: ' + info['sector'])
+                  st.markdown('** Atividade **: ' + info['industry'])
+                  st.markdown('** Website **: ' + info['website'])
+              except:
+                exit
+                
               try:
                 fundInfo = {
             'Dividend Yield (%) -12 meses': round(info['dividendYield']*100,2),
