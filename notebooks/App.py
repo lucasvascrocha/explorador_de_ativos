@@ -230,7 +230,7 @@ def main():
               pfizer = yf.Ticker(nome_do_ativo)
               info = pfizer.info 
               st.title('PERFIL DA EMPRESA')
-              st.subheader(info['longName']) 
+              #st.subheader(info['longName']) 
               st.markdown('** Setor **: ' + info['sector'])
               st.markdown('** Atividade **: ' + info['industry'])
               st.markdown('** Website **: ' + info['website'])
