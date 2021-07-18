@@ -800,61 +800,9 @@ def main():
         todos = pd.DataFrame(flatten(lista).keys()).transpose()
         todos.columns = todos.iloc[0]
         
-        for i in range(len(lista)):
-          todos = pd.concat([todos,pd.DataFrame(lista[i]).transpose()])
-        
-        todos = todos.iloc[1:]
+        st.dataframe(todos)
         
         
-        start = (dt.datetime.today() + dt.timedelta(days=-300)).strftime(format='20%y-%m-%d')
-        dia_limite = (dt.datetime.today() + dt.timedelta(days=-30)).strftime(format='20%y-%m-%d')
-        
-        save = []
-        #for i in range(len(tudo)):
-        for i in range(len(todos)):
-          try:
-
-            #nome_do_ativo = str(tudo.iloc[i][0] + '.SA')
-            nome_do_ativo = str(todos.index[i] + '.SA')
-            try:
-              df = Ticker(nome_do_ativo ,country='Brazil')
-              time = df.history( start= start )
-              rolling_9  = time['close'].rolling(window=9)
-              rolling_mean_9 = rolling_9.mean().round(1)
-
-              rolling_72  = time['close'].rolling(window=72)
-              rolling_mean_72 = rolling_72.mean().round(1)
-              time['MM9'] = rolling_mean_9.fillna(0)
-              time['MM72'] = rolling_mean_72.fillna(0)
-              time['cruzamento'] =  time['MM9'] - time['MM72']
-              buy = time.tail(30).loc[(time.tail(30)['cruzamento']==0)]
-            except:
-              exit
-
-          except:
-            exit
-
-          if buy.empty == False:
-            try:
-              if time['MM72'].iloc[-1] < time['MM9'].iloc[-1] :
-                save.append(buy.index[0][0])
-                #print('')
-                #print(buy.index[0][0])
-                #layout = go.Layout(title="Resultados",xaxis=dict(title="Data"), yaxis=dict(title="Preço R$"))
-                #fig = go.Figure(layout = layout)
-                #fig.add_trace(go.Candlestick(x=time.reset_index()['date'][-50:], open=time['open'][-50:],high=time['high'][-50:],low=time['low'][-50:],close=time['close'][-50:]))
-                #fig.update_layout(autosize=False,width=1000,height=800,)
-                #fig.show()
-                #print()
-              else:
-                continue
-            except:
-              exit
-          else:
-            exit
-            
-        st.dataframe(save)
-
 
 
 
