@@ -10,5 +10,6 @@ pip == 20.2.4
 numpy == 1.19.2
 pystan == 2.19.1.1
 fbprophet == 0.7.1
+streamlit==0.69
 
 
