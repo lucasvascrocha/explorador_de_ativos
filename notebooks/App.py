@@ -884,7 +884,7 @@ def main():
                   time['MM9'] = rolling_mean_9.fillna(0)
                   time['MM72'] = rolling_mean_72.fillna(0)
                   time['cruzamento'] =  time['MM9'] - time['MM72']
-                  buy = time.tail(30).loc[(time.tail(30)['cruzamento']==0)]
+                  buy = time.tail(50).loc[(time.tail(50)['cruzamento']==0)]
                 except:
                   exit
 
