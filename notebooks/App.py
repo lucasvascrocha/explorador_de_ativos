@@ -895,7 +895,7 @@ def main():
 
               if buy.empty == False:
                 try:
-                  if time['MM72'].iloc[-1] < time['MM9'].iloc[-1] :
+                  if time['MM72'].iloc[-1] < time['MM9'].iloc[-1] and  time.tail(1)['volume'][0] > 5000:
                     save.append(buy.index[0][0])
                     print(buy.index[0][0])
                     #layout = go.Layout(title="Resultados",xaxis=dict(title="Data"), yaxis=dict(title="Preço R$"))
