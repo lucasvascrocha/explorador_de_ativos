@@ -45,6 +45,8 @@ import datetime
 import os
 from pymongo import MongoClient
 
+from datetime import datetime
+
 
 
 # ------------------------------ SCRAPPING -------------------------------
@@ -190,18 +192,35 @@ def main():
 
     st.sidebar.header("Explorador de ativos")
     n_sprites = st.sidebar.radio(
-        "Escolha uma opção", options=["Análise técnica e fundamentalista", "Comparação de ativos","Descobrir novos ativos", "Rastreador de trade"], index=0
+        "Escolha uma opção", options=["Análise técnica e fundamentalista", "Comparação de ativos","Descobrir novos ativos", "Rastreador de trade", "Análise de carteira e previsão de lucro"], index=0
     )
 
     st.sidebar.markdown('É preciso ter paciência e disciplina para se manter firme em suas convicções quando o mercado insiste que você está errado.!')
     st.sidebar.markdown('Benjamin Graham')
     st.sidebar.markdown('Email para contato: lucas.vasconcelos3@gmail.com')
-    st.sidebar.markdown('Portfólio: https://github.com/lucasvascrocha')                                    
+    st.sidebar.markdown('Portfólio: https://github.com/lucasvascrocha')
+    
+    
+
+    
+
 
 # ------------------------------ INÍCIO ANÁLISE TÉCNICA E FUNDAMENTALISTA ----------------------------             
 
     if n_sprites == "Análise técnica e fundamentalista":
-        st.image('https://media.giphy.com/media/rM0wxzvwsv5g4/giphy.gif', width=400)    
+        
+        col1, col2, col3 = st.columns([1,6,1])
+
+        with col1:
+            st.write("")
+
+        with col2:
+            st.image('https://media.giphy.com/media/rM0wxzvwsv5g4/giphy.gif', width=400)
+
+        with col3:
+            st.write("")
+        
+        #st.image('https://media.giphy.com/media/rM0wxzvwsv5g4/giphy.gif', width=400)    
         #image = Image.open('imagens/logo.jpg')
         #st.image(image, use_column_width=True)                       
         st.title('Análise Técnica e fundamentalista')
@@ -541,8 +560,19 @@ def main():
 # ------------------------------ INÍCIO Comparação de ativos ------------------------------------------------------------------------------------
 
     if n_sprites == "Comparação de ativos":
+        
+        col1, col2, col3 = st.columns([1,6,1])
 
-        st.image('https://media.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif', width=300)    
+        with col1:
+            st.write("")
+
+        with col2:
+            st.image('https://media.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif', width=300)
+
+        with col3:
+            st.write("")
+
+        #st.image('https://media.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif', width=300)    
         #image = Image.open('imagens/logo.jpg')
         #st.image(image, use_column_width=True)                       
         st.title('Comparação de ativos')
@@ -752,8 +782,19 @@ def main():
 # ------------------------------ INÍCIO Comparação de ativos ------------------------------------------------------------------------------------
 
     if n_sprites == "Descobrir novos ativos":
+        
+        col1, col2, col3 = st.columns([1,6,1])
 
-        st.image('https://media.giphy.com/media/3ohs4gux2zjc7f361O/giphy.gif', width=400)    
+        with col1:
+            st.write("")
+
+        with col2:
+            st.image('https://media.giphy.com/media/3ohs4gux2zjc7f361O/giphy.gif', width=400)
+
+        with col3:
+            st.write("")
+
+        #st.image('https://media.giphy.com/media/3ohs4gux2zjc7f361O/giphy.gif', width=400)    
         #image = Image.open('imagens/logo.jpg')
         #st.image(image, use_column_width=True)                       
         st.title('Descobrir novos ativos')
@@ -791,8 +832,19 @@ def main():
 # ------------------------------ INÍCIO Rastreador de trade ------------------------------------------------------------------------------------
 
     if n_sprites == "Rastreador de trade":
+        
+        col1, col2, col3 = st.columns([1,6,1])
 
-        st.image('https://media.giphy.com/media/d83YIjgW4uyTpYfjbd/giphy.gif', width=400)    
+        with col1:
+            st.write("")
+
+        with col2:
+            st.image('https://media.giphy.com/media/d83YIjgW4uyTpYfjbd/giphy.gif', width=400)
+
+        with col3:
+            st.write("")
+
+        #st.image('https://media.giphy.com/media/d83YIjgW4uyTpYfjbd/giphy.gif', width=400)    
         #image = Image.open('imagens/logo.jpg')
         #st.image(image, use_column_width=True)  
         
@@ -813,7 +865,7 @@ def main():
         
         st.write('Este rastreador identifica oportunidades para swing trade vasculhando as principais ações listadas na B3, o filtro consiste em encontrar ativos que tenham médias móveis exponenciais de 9 e 72 cruzadas para cima')
         
-        with st.beta_expander("Aguarde estamos vasculhando todas as ações da bolsa (Mantenha esta barra minimizada)!"):
+        with st.expander("Aguarde estamos vasculhando todas as ações da bolsa (Mantenha esta barra minimizada)!"):
             save = []
             #for i in range(len(tudo)):
             for i in range(len(todos)):
@@ -891,11 +943,80 @@ def main():
             fig.update_layout(autosize=False,width=800,height=800,)
             st.plotly_chart(fig)
         
+# ------------------------------ INÍCIO Análise de carteira ------------------------------------------------------------------------------------        
         
+
+
+    if n_sprites == "Análise de carteira e previsão de lucro":
         
-        
-    
+        col1, col2, col3 = st.columns([1,6,1])
+
+        with col1:
+            st.write("")
+
+        with col2:
+            st.image('https://media.giphy.com/media/3ShFD4IvX96027JjhH/giphy.gif', width=400)
+
+        with col3:
+            st.write("")
+            
+        #st.image('https://media.giphy.com/media/3ShFD4IvX96027JjhH/giphy.gif', width=400)    
+        #image = Image.open('imagens/logo.jpg')
+        #st.image(image, use_column_width=True)                       
+        st.title('Análise de carteira e previsão de lucro')
+        st.subheader('Receba insights sobre suas operações realizadas no passado e preveja se sua próxima operação no futuro será lucrativa, ou não!')
+        st.write('Usando os dados do seu extrato histórico fornecido pelo site da B3 iremos treinar um algorítimo de inteligência artificial que será capaz de analisar suas operações passadas, mostrar padrões que te levaram ao lucro ou prejuízo, além de prever a probabilidade de lucro de uma ação caso ela seja comprada hoje por você')
                  
+
+            
+            
+        #botao_testar = st.button('Testar com nossos dados!')
+        #botao_seus_dados = st.button('Usar os dados de minhas operações')
+        
+        menu = ["Escolha uma opção","Testar com nossos dados!","Usar os dados de minhas operações"]
+        choice = st.selectbox("Menu",menu)
+        
+        if choice == "Usar os dados de minhas operações":
+            st.subheader("Login Section")
+
+            username = st.text_input("User Name")
+            password = st.text_input("Password",type='password')
+            if password == '12345':
+                st.subheader('Faça upload aqui do seu extrato da B3')
+                with st.expander("Passo a passo de como acessar os dados no site da B3"):
+                    st.write('Explicar passo a passo')
+            else:
+                st.warning("Incorrect Username/Password")
+            
+            
+            
+            #st.subheader('Faça upload aqui do seu extrato da B3')
+            #file  = st.file_uploader('Entre com seu extrato (.xlsx)', type = 'xlsx')    
+            #if file:
+                #df = pd.read_excel(file)
+
+                #st.dataframe(df)
+                #st.table(df)
+                #st.write('Lucro Total até hoje: R$',round(df['Preço Médio (Venda)'].sum(),2))
+                #extrato = pd.DataFrame(df)
+
+                #nome_do_ativo = str(df['Código de Negociação'][0] + '.SA')
+                #st.subheader('Analisando os dados')
+                #df = Ticker(nome_do_ativo,country='Brazil')
+                #time = df.history( period='max')
+                #time = df.history( start= extrato['Período (Inicial)'][0])
+                #st.dataframe(time.tail())
+                #st.write(datetime.strptime(extrato['Período (Inicial)'][0], '%d/%m/%Y').strftime('%Y-%m-%d'))
+                #datetimeobject = datetime.strptime(extrato['Período (Inicial)'],'%d/%m/%Y')
+                #newformat = datetimeobject.strftime('%Y-%m-%d')
+                #st.write(newformat)
+
+
+                        
+
+
+
+
 
 # ------------------------------ FIM ----------------------------
 
