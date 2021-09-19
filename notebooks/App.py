@@ -209,7 +209,7 @@ def set_background(png_file):
 # ----------------------------------SIDEBAR -------------------------------------------------------------
 def main():
 
-    set_background('bg03.jpg')
+    #set_background('bg03.jpg')
 
     st.sidebar.header("Explorador de ativos")
     n_sprites = st.sidebar.radio(
