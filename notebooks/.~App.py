@@ -187,29 +187,8 @@ def flatten(d):
             result[k] = v
     return result
 
-
-# ----------------------------------BACKGROUND -------------------------------------------------------------
-def get_base64(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-def set_background(png_file):
-    bin_str = get_base64(png_file)
-    page_bg_img = '''
-    <style>
-    .stApp {
-    background-image: url("data:image/png;base64,%s");
-    background-size: cover;
-    }
-    </style>
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
 # ----------------------------------SIDEBAR -------------------------------------------------------------
 def main():
-
-    set_background('../images/bg03.jpg')
 
     st.sidebar.header("Explorador de ativos")
     n_sprites = st.sidebar.radio(
@@ -221,10 +200,15 @@ def main():
     st.sidebar.markdown('Email para contato: lucas.vasconcelos3@gmail.com')
     st.sidebar.markdown('Portfólio: https://github.com/lucasvascrocha')
     
+    
+
+    
+
+
 # ------------------------------ INÍCIO ANÁLISE TÉCNICA E FUNDAMENTALISTA ----------------------------             
 
     if n_sprites == "Análise técnica e fundamentalista":
-
+        
         col1, col2, col3 = st.columns([1,6,1])
 
         with col1:
@@ -967,9 +951,16 @@ def main():
 
     if n_sprites == "Análise de carteira e previsão de lucro":
         
-    
+        page_bg_img = '''
+        <style>
+        body {
+        background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+        background-size: cover;
+        }
+        </style>
+        '''
 
-
+        st.markdown(page_bg_img, unsafe_allow_html=True)
         
         col1, col2, col3 = st.columns([1,6,1])
 
@@ -981,8 +972,6 @@ def main():
 
         with col3:
             st.write("")
-
-
             
         #st.image('https://media.giphy.com/media/3ShFD4IvX96027JjhH/giphy.gif', width=400)    
         #image = Image.open('imagens/logo.jpg')
