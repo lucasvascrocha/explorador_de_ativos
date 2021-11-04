@@ -10,6 +10,9 @@ pip == 20.2.4
 numpy == 1.19.2
 pystan == 2.19.1.1
 fbprophet == 0.7.1
+selenium == 3.141.0
+webdriver-manager == 3.4.2  
+tqdm == 4.56.0  
 
 
 

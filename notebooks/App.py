@@ -53,11 +53,21 @@ from datetime import datetime
 
 
 def get_data(*args, **kwargs):
+    class AppURLopener(urllib.request.FancyURLopener):
+        version = "Mozilla/5.0"
+
+    opener = AppURLopener()
+    response = opener.open('http://httpbin.org/user-agent')
+    
     url = 'http://www.fundamentus.com.br/resultado.php'
     cj = http.cookiejar.CookieJar()
     opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
-    opener.addheaders = [('User-agent', 'Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201'),
-                         ('Accept', 'text/html, text/plain, text/css, text/sgml, */*;q=0.01')]
+
+    opener.addheaders = [('User-agent', 'XYZ/3.0'),
+                         ('Accept', 'text/html, text/plain, text/css, text/sgml, */*;q=0.01')]    
+    
+    #opener.addheaders = [('User-agent', 'Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201'),
+    #                     ('Accept', 'text/html, text/plain, text/css, text/sgml, */*;q=0.01')]
 
     # Aqui estão os parâmetros de busca das ações
     # Estão em branco para que retorne todas as disponíveis
@@ -104,11 +114,21 @@ def get_data(*args, **kwargs):
     return lista
 
 def get_specific_data(stock):
+    class AppURLopener(urllib.request.FancyURLopener):
+        version = "Mozilla/5.0"
+
+    opener = AppURLopener()
+    response = opener.open('http://httpbin.org/user-agent')
+    
     url = "http://www.fundamentus.com.br/detalhes.php?papel=" + stock
     cj = http.cookiejar.CookieJar()
     opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
-    opener.addheaders = [('User-agent', 'Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201'),
-                         ('Accept', 'text/html, text/plain, text/css, text/sgml, */*;q=0.01')]
+    
+    opener.addheaders = [('User-agent', 'XYZ/3.0'),
+                         ('Accept', 'text/html, text/plain, text/css, text/sgml, */*;q=0.01')]       
+    
+    #opener.addheaders = [('User-agent', 'Mozilla/5.0 (Windows; U; Windows NT 6.1; rv:2.2) Gecko/20110201'),
+    #                     ('Accept', 'text/html, text/plain, text/css, text/sgml, */*;q=0.01')]
     
     # Get data from site
     link = opener.open(url, urllib.parse.urlencode({}).encode('UTF-8'))
