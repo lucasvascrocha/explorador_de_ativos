@@ -20,10 +20,15 @@ import style as style
 
 import scrap as scraping
 
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 
 
 def analise_tecnica_fundamentalista():
-    style.set_css()
+    #style.set_css()
+    local_css("style.css")
 
     st.markdown(
 """
@@ -36,7 +41,6 @@ def analise_tecnica_fundamentalista():
     # with open('style.css') as f:
     #     st.markdown(f'<style>{f.read()}</style>',unsafe_allow_html=True)
     
-    style.set_css()
     
     col1, col2, col3 = st.columns([2,6,2])
 
