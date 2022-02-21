@@ -36,6 +36,12 @@ def analise_tecnica_fundamentalista():
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 """,unsafe_allow_html=True
     )
+    st.markdown(
+"""
+<link href="style.css" rel="stylesheet">
+
+""",unsafe_allow_html=True
+    )
 
     #importa css style
     # with open('style.css') as f:
