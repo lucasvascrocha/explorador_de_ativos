@@ -28,7 +28,7 @@ def local_css(file_name):
 
 def analise_tecnica_fundamentalista():
     #style.set_css()
-    local_css("style.css")
+    #local_css("style.css")
 
     st.markdown(
 """
@@ -100,7 +100,7 @@ def analise_tecnica_fundamentalista():
 
                     st.markdown(
                             f"""
-                            <div class="card-deck">
+                            <div class="card-deck" style= "-webkit-box-orient: horizontal;  width: 830px;" >
 
                             <div class="card">
                                 <div class="card-body text-center">
