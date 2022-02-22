@@ -1,22 +1,2 @@
-matplotlib==3.2.1
-pandas==1.0.4
-seaborn==0.11.1
-streamlit==0.87.0
-yahooquery==2.2.15
-yfinance==0.1.63
-pymongo==3.11.3
-plotly==4.4.1
-pip == 20.2.4
-numpy == 1.19.2
-pystan == 2.19.1.1
-fbprophet == 0.7.1
-requests == 2.24.0 
-html5lib == 1.1
-beautifulsoup4 == 4.9.3
-htmlmin == 0.1.12
-webdriver_manager == 3.4.2
-selenium == 3.141.0
-xlrd == 1.2.0
-scikit-learn == 0.23.2
-streamlit-option-menu == 0.3.2
+streamlit==1.5.1
 
