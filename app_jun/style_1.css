@@ -1,0 +1,143 @@
+p{
+    color:rgb(74, 113, 152);
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Bree Serif', serif;
+}
+
+/* MÉTRICS KPIS STREAMLIT  */
+.css-12w0qpk.e1tzin5v2{
+    display: fixed;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -webkit-box-align: stretch;  
+    align-items: stretch;
+    gap: 1rem;
+    background-color:#fff;
+    border-radius: 2.25rem;
+    text-align: center;
+    width: 800px;
+
+}
+
+/* card conteudo  */
+
+.card-main .card-body {
+    display: fixed;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -webkit-box-align: stretch;  
+    align-items: stretch;
+    gap: 1rem;
+    background-color:#fff;
+    border-radius: 2.25rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* botão input */
+.st-b7 {
+    width: 100%;
+    border-radius: 2.25rem;
+
+    
+}
+
+.css-18e3th9 {
+    flex: 1 1 0%;
+    width: 100%;
+    padding: 6rem 1rem 10rem;
+    min-width: auto;
+    max-width: initial;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    vertical-align: center;
+}
+
+
+
+
+/* KPI BOOSTRAP */
+
+/* .icon {  
+float: right;
+font-size:500%;
+position: absolute;
+top:0rem;
+right:-0.3rem;
+opacity: .16;
+}
+
+
+#container
+{
+width: 800px;
+display: flex;
+}
+
+.kpi-card
+{
+overflow: hidden;
+position: relative;
+box-shadow: 1px 1px 3px rgba(0,0,0,0.75);;
+display: inline-block;
+float: left;
+padding: 1em;
+border-radius: 0.3em;
+font-family: sans-serif;  
+width: 240px;
+min-width: 180px;
+margin-left: 0.5em;
+margin-top: 0.5em;
+}
+
+.card-value {
+display: block;
+font-size: 200%;  
+font-weight: bolder;
+}
+
+.card-text {
+display:block;
+font-size: 70%;
+padding-left: 0.2em;
+} */
+
+/* Todos os cards juntos */
+/* .card-deck {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin-right: 0px;
+    margin-left: -15px;
+    width: 430px;
+    
+}
+
+
+.card-deck .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 0;
+    margin-left: 15px;
+    border-radius: 2.25rem;
+} */
+
+
+
+
