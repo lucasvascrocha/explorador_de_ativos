@@ -8,21 +8,20 @@ p{
 
 
 
-/* fundo cinza pag 1 */
-.css-ocqkz7 {
-    display: flex;
-    flex-wrap: wrap;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    -webkit-box-align: stretch;
-    align-items: stretch;
-    gap: 1rem;
-    border-radius: 30px;
-    background: rgb(240, 238, 238);
+/* side bar */
+.css-ppzyts.e1fqkh3o1{
+    background-color: rgb(168, 166, 166);
+    background-attachment: fixed;
+    flex-shrink: 0;
+    height: 100vh;
+    overflow: auto;
+    padding: 6rem 1rem;
+    position: relative;
+    transition: margin-left 300ms ease 0s, box-shadow 300ms ease 0s;
+    width: 21rem;
+    z-index: 100;
+    margin-left: 0px;
 }
-
-
-
 
 /* KPI  */
 

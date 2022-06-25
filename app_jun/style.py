@@ -1,8 +1,6 @@
 import base64
 import streamlit as st
 
-from streamlit_option_menu import option_menu
-
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -20,54 +18,83 @@ def set_background(png_file):
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-#esconder botões do streamlit
-def hidden_menu_and_footer():
-    hide_menu = '''
+def set_css():
+    css_settings ='''
     <style>
-    #MainMenu {
-        visibility:hidden;
+
+    p{
+        color:rgb(0, 0, 0);
+        text-align: center;
+        font-size: 14px;
+        font-family: 'Bree Serif', serif;
     }
 
-    footer{
-        visibility:hidden;
+    .css-ocqkz7 {
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        -webkit-box-align: stretch;
+        align-items: stretch;
+        gap: 1rem;
+        border-radius: 30px;
+        background: rgb(240, 238, 238);
+    }
+
+    .icon {  
+    float: right;
+    font-size:500%;
+    position: absolute;
+    top:0rem;
+    right:-0.3rem;
+    opacity: .16;
+    }
+
+    {
+    width: 800px;
+    display: flex;
+    }
+
+
+    .kpi-card
+    {
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.75);;
+    display: inline-block;
+    float: left;
+    padding: 1em;
+    border-radius: 0.3em;
+    font-family: sans-serif;  
+    width: 240px;
+    min-width: 180px;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    }
+
+    .card-value {
+    display: block;
+    font-size: 200%;  
+    font-weight: bolder;
+    }
+
+    .card-text {
+    display:block;
+    font-size: 70%;
+    padding-left: 0.2em;
+    }
+
+    .card-deck {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        margin-right: 0px;
+        margin-left: -15px;
+        width: 830px;
+
     }
 
     </style>
     '''
-    st.markdown(hide_menu, unsafe_allow_html=True)
-
-#linha no cabeçalho branca desing
-def headerstyle():
-    st.markdown(
-    f"""
-    <nav class="navbar fixed-top navbar-light bg-white" style="color: #ffffff; padding: 0.8rem 1rem;">
-        <span class="navbar-brand mb-0 h1" " >  </span>
-    </nav>
-    """, unsafe_allow_html=True
-    )
-
-
-#espaço entre plots
-def space(tamanho):
-    if tamanho == 1:
-        st.title('')
-    if tamanho == 2:
-        st.header('') 
-    if tamanho == 3:
-        st.write('') 
-
-def sidebarwidth():
-    st.markdown(
-        """
-        <style>
-        [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-            width: 250px;
-        }
-        [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
-            width: 250px;
-            margin-left: -500px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-        )    
+    st.markdown(css_settings, unsafe_allow_html=True)

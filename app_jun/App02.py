@@ -27,6 +27,7 @@ import pag2 as pag2
 import pag3 as pag3
 import pag4 as pag4
 import pag5 as pag5
+import pag1_02 as pag1_02
 
 def local_css(file_name):
     with open(file_name) as f:
@@ -50,25 +51,38 @@ def main():
     
 
  # ----------------------------------NAVBAR -------------------------------------------------------------   
+    # n_sprites = option_menu(None,["Home", "Login", "Cadastro"],
+    #                         icons=['', '', ''],
+    #                         default_index= 0, menu_icon="app-indicator", orientation='horizontal',   #
+    #                         styles={
+    #         "container": {"padding": "10!important", "background-color": "#f0eeee" }, # ,"background-size": "cover","margin": "0px"},
+    #         #"container": {"padding": "0", "background-color": "#fafafa","background-size": "cover","margin": "0px"},
+    #         #"icon": {"color": "orange", "font-size": "25px"}, 
+    #         #"nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+    #         "nav-link": {"font-size": "16px", "text-align": "center", "--hover-color": "#eee","font-weight": "bold"}, #,"position": "relative","display": "inline"},
+    #         "nav-link-selected": {"background-color": "#4E90FF"},
+    #     }
+    #     ) 
     
-    n_sprites = option_menu(None,["Análise técnica e fundamentalista", "Comparação de ativos", "Descobrir novos ativos", "Rastreador de trade", "Análise de carteira e previsão de lucro"],
-                        icons=['bar-chart', 'book', 'bullseye', 'binoculars','cash-coin'],
-                         default_index=0, orientation='horizontal',menu_icon="app-indicator",
-                        styles={
-        "container": {"padding": "10!important", "background-color": "#f0eeee" }, # ,"background-size": "cover","margin": "0px"},
-        #"container": {"padding": "0", "background-color": "#fafafa","background-size": "cover","margin": "0px"},
-        #"icon": {"color": "orange", "font-size": "25px"}, 
-        #"nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link": {"font-size": "16px", "text-align": "center", "--hover-color": "#eee","font-weight": "bold"}, #,"position": "relative","display": "inline"},
-        "nav-link-selected": {"background-color": "#4E90FF"},
-    }
-    ) 
+    with st.sidebar:
+        n_sprites = option_menu('Menu',["Home","Login","Cadastro","Análise técnica e fundamentalista", "Comparação de ativos", "Descobrir novos ativos", "Rastreador de trade", "Análise de carteira e previsão de lucro"],
+                            icons=['bar-chart', 'book', 'bullseye', 'binoculars','cash-coin'],
+                            default_index=0, menu_icon="app-indicator",   #orientation='horizontal',
+                            styles={
+            "container": {"padding": "2!important", "background-color": "#ffffff" }, # ,"background-size": "cover","margin": "0px"},
+            #"container": {"padding": "0", "background-color": "#fafafa","background-size": "cover","margin": "0px"},
+            #"icon": {"color": "orange", "font-size": "25px"}, 
+            #"nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+            "nav-link": {"font-size": "12px", "text-align": "left", "--hover-color": "#eee","font-weight": "bold"}, #,"position": "relative","display": "inline"},
+            "nav-link-selected": {"background-color": "#4E90FF"},
+        }
+        ) 
 
  # ----------------------------------PAGES -------------------------------------------------------------     
 
     if n_sprites == "Análise técnica e fundamentalista":
         local_css("style_1.css")      
-        pag1.analise_tecnica_fundamentalista()
+        pag1_02.analise_tecnica_fundamentalista2()
 
     if n_sprites == "Comparação de ativos":
         local_css("style_2.css")   

@@ -1,28 +1,22 @@
+
 p{
-    color:rgb(74, 113, 152);
+    color:rgb(0, 0, 0);
     text-align: center;
     font-size: 14px;
     font-family: 'Bree Serif', serif;
 }
 
-/* botão input */
-.st-b7 {
-    width: 100%;
-    border-radius: 2.25rem;
 
-    
-}
 
-.css-18e3th9 {
-    flex: 1 1 0%;
-    width: 100%;
-    padding: 6rem 1rem 10rem;
-    min-width: auto;
-    max-width: initial;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    align-self: center;
-    vertical-align: center;
+/* fundo cinza pag 1 */
+.css-ocqkz7 {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    gap: 1rem;
+    border-radius: 30px;
+    background: rgb(240, 238, 238);
 }

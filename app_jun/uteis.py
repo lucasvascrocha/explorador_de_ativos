@@ -33,7 +33,6 @@ def rank( X, y):
 
     return lista_comb_feat_RFR , rank.sort_values('RFR', ascending=False)
 
-#UTILIZA LISTA COM NOMES ÚNICOS DAS AÇÕES, DATAFRAME DA B3, DADOS HISTÓRICOS E A TABELA DE INPUT COM UMA LINHA PARA CADA AÇÃO
 def inputer_train(lista, df, data, df_filled):
 
     for i in range(len(lista)):
@@ -50,9 +49,13 @@ def inputer_train(lista, df, data, df_filled):
             rendimento_total = round(((preco_medio_vendido - preco_medio_compra) / preco_medio_vendido) * 100,2)
             
             #dados históricos ticker
+            
             dados_acao = pd.DataFrame(data.loc[ : , (['Open','High','Low','Close','Adj Close','Volume'],lista[i]+".SA")])
             #dados_acao_filtrado = dados_acao.loc[dados_acao.index <= data_compra_1]
-            dados_acao_filtrado = dados_acao.loc[dados_acao.index <= pd.to_datetime(data_compra_1)]               
+            dados_acao_filtrado = dados_acao.loc[dados_acao.index <= pd.to_datetime(data_compra_1)]
+            
+
+                
             
             #RENDIMENTO ULTIMOS X DIAS (ONTEM X DIA COMPARADO)
             
