@@ -1,88 +1,87 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
 import streamlit as st
-st.set_page_config(  # Alternate names: setup_page, page, layout
-	layout="wide",  # Can be "centered" or "wide". In the future also "dashboard", etc.
-	initial_sidebar_state="auto",  # Can be "auto", "expanded", "collapsed"
-	page_title=None,  # String or None. Strings get appended with "• Streamlit". 
-	page_icon=None,  # String, anything supported by st.image, or None.
-)
-
-import matplotlib
-matplotlib.use('Agg')
-
-from streamlit_option_menu import option_menu
+from PIL import Image
 
 import warnings
 warnings.filterwarnings('ignore')
- 
-import datetime as dt 
-dia = dt.datetime.today().strftime(format='20%y-%m-%d')
+
 
 import style as style
-import pag1 as pag1
-import pag2 as pag2
-import pag3 as pag3
-import pag4 as pag4
-import pag5 as pag5
+import home_en as home_en
+import ocrreader_en as ocr_en
+import sobre_en as sobre_en
 
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+import home as home
+import ocrreader as ocr
+import sobre as sobre
 
 
-
-
-#style.set_background('images/bkgold.png')
-#style.set_css()
-
-    #     st.markdown(
-    # """
-    # <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    # <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    # """,unsafe_allow_html=True
-    #     )
-
-
+# ----------------------------------SIDEBAR -------------------------------------------------------------
 def main():
+
+    #style.set_background('images/bg03.jpg')
+
+    n_sprites_2 = st.sidebar.selectbox(
+        "Select language", ("Englsih","Portuguese"))
+
+    if n_sprites_2 == "Englsih":
+
+
+        st.sidebar.header("OCR - Character reading from images")
+        n_sprites = st.sidebar.radio(
+            "Choose an option", options=["Home","Character reading","About Bix-tecnologia"], index=0
+        )
+
+        #style.spaces_sidebar(15)
+        st.sidebar.write('https://www.bixtecnologia.com/')
+        image = Image.open('images/logo_sidebar_sem_fundo.png')
+        st.sidebar.image(image, use_column_width=True)
+
+        #st.image(image, use_column_width=True)  
+        
+    # ------------------------------ INÍCIO ANÁLISE TÉCNICA E FUNDAMENTALISTA ----------------------------             
+
+        if n_sprites == "Home":
+
+            home_en.home()
+
+        if n_sprites == "Character reading":
+
+            ocr_en.ocr_reader()
+
+        if n_sprites == "About Bix-tecnologia":
+
+            sobre_en.sobre_bix()        
+
     
+    else:
+        st.sidebar.header("Leitor de caracteres")
+        n_sprites = st.sidebar.radio(
+            "Escolha uma opção", options=["Home","Leitura de caracteres","Sobre a Bix-tecnologia"], index=0
+        )
 
- # ----------------------------------NAVBAR -------------------------------------------------------------   
-    
-    n_sprites = option_menu(None,["Análise técnica e fundamentalista", "Comparação de ativos", "Descobrir novos ativos", "Rastreador de trade", "Análise de carteira e previsão de lucro"],
-                        icons=['bar-chart', 'book', 'bullseye', 'binoculars','cash-coin'],
-                         default_index=0, orientation='horizontal',menu_icon="app-indicator",
-                        styles={
-        "container": {"padding": "10!important", "background-color": "#f0eeee" }, # ,"background-size": "cover","margin": "0px"},
-        #"container": {"padding": "0", "background-color": "#fafafa","background-size": "cover","margin": "0px"},
-        #"icon": {"color": "orange", "font-size": "25px"}, 
-        #"nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link": {"font-size": "16px", "text-align": "center", "--hover-color": "#eee","font-weight": "bold"}, #,"position": "relative","display": "inline"},
-        "nav-link-selected": {"background-color": "#4E90FF"},
-    }
-    ) 
+        #style.spaces_sidebar(15)
+        st.sidebar.write('https://www.bixtecnologia.com/')
+        image = Image.open('images/logo_sidebar_sem_fundo.png')
+        st.sidebar.image(image, use_column_width=True)
 
- # ----------------------------------PAGES -------------------------------------------------------------     
+        #st.image(image, use_column_width=True)  
+        
+    # ------------------------------ INÍCIO ANÁLISE TÉCNICA E FUNDAMENTALISTA ----------------------------             
 
-    if n_sprites == "Análise técnica e fundamentalista":
-        local_css("style_1.css")      
-        pag1.analise_tecnica_fundamentalista()
+        if n_sprites == "Home":
 
-    if n_sprites == "Comparação de ativos":
-        local_css("style_2.css")   
-        pag2.comparacao_ativos()
+            home.home()
 
-    if n_sprites == "Descobrir novos ativos":
-        pag3.descobrir_ativos()
+        if n_sprites == "Leitura de caracteres":
 
-    if n_sprites == "Rastreador de trade":
-        pag4.rastreador()     
+            ocr.ocr_reader()
 
-    if n_sprites == "Análise de carteira e previsão de lucro":
-        pag5.analise_carteira()
+        if n_sprites == "Sobre a Bix-tecnologia":
+
+            sobre.sobre_bix()        
+
+
+ 
         
 if __name__ == '__main__':
     main()
-
