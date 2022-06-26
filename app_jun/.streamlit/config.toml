@@ -1,0 +1,11 @@
+[theme]
+
+primaryColor = '#FF4B4B'
+backgroundColor = '#f0eeee'
+secondaryBackgroundColor = '#FFFFFF'
+textColor = '#31333F'
+font = "serif"
+
+#font = "Display fonts"
+#font = "sans serif"
+#Spartan
