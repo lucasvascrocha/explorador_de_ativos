@@ -5,15 +5,6 @@ p{
     font-family: 'Bree Serif', serif;
 }
 
-
-/* botão input */
-.st-b7 {
-    width: 100%;
-    border-radius: 2.25rem;
-
-    
-}
-
 .css-18e3th9 {
     flex: 1 1 0%;
     width: 100%;
@@ -26,4 +17,20 @@ p{
     align-content: center;
     align-self: center;
     vertical-align: center;
+}
+
+
+/* DataFrame style */
+.stDataFrame {
+    border-radius: 10px;
+    background: rgb(240, 238, 238);
+    background-color:#fff;
+}
+
+/* botão input */
+.st-b7 {
+    width: 100%;
+    border-radius: 2.25rem;
+
+    
 }
