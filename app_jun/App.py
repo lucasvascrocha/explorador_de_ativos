@@ -67,11 +67,11 @@ def main():
  # ----------------------------------PAGES -------------------------------------------------------------     
 
     if n_sprites == "Análise técnica e fundamentalista":
-        local_css("style_1.css")      
+        #local_css("style_1.css")      
         pag1.analise_tecnica_fundamentalista()
 
     if n_sprites == "Comparação de ativos":
-        local_css("style_2.css")   
+        #local_css("style_2.css")   
         pag2.comparacao_ativos()
 
     if n_sprites == "Descobrir novos ativos":
