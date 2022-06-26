@@ -41,10 +41,10 @@ def main():
     #local_css("style_0.css")  
 
     #esconder botão de menu e marca dágua no rodapé
-    style.hidden_menu_and_footer()
+    #style.hidden_menu_and_footer()
 
     #cabeçalho detalhe superior da página 
-    style.headerstyle()
+    #style.headerstyle()
 
  # ----------------------------------MENU -------------------------------------------------------------   
 
