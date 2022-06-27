@@ -8,7 +8,7 @@ from collections import OrderedDict
 
 import scrap as scraping
 
-from st_aggrid import AgGrid
+#from st_aggrid import AgGrid
 
 
 
@@ -117,7 +117,9 @@ def descobrir_ativos():
 
 
         #st.dataframe(merged[['Código','Cotação', 'Pat.Liq', 'Expectativa de crescimento','Desconto Bazin', 'Desconto Graham','Nome',	'Setor','Subsetor',	'Segmento']])
-        AgGrid(filtred[['Código','Cotação', 'Lucro Líquido', 'Expectativa de crescimento','Desconto Bazin', 'Desconto Graham','Nome',	'Setor','Subsetor',	'Segmento']].round(2))
+        #AgGrid(filtred[['Código','Cotação', 'Lucro Líquido', 'Expectativa de crescimento','Desconto Bazin', 'Desconto Graham','Nome',	'Setor','Subsetor',	'Segmento']].round(2))
+        st.dataframe(filtred[['Código','Cotação', 'Lucro Líquido', 'Expectativa de crescimento','Desconto Bazin', 'Desconto Graham','Nome',	'Setor','Subsetor',	'Segmento']].round(2))
+
 
 
 
